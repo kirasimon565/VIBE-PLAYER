@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+
+class FadeInAnimation extends StatelessWidget {
+  final Widget child;
+  final Duration duration;
+  final Duration delay;
+
+  const FadeInAnimation({
+    Key? key,
+    required this.child,
+    this.duration = const Duration(milliseconds: 500),
+    this.delay = Duration.zero,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TweenAnimationBuilder(
+      tween: Tween<double>(begin: 0.0, end: 1.0),
+      duration: duration,
+      curve: Curves.easeIn,
+      builder: (context, double value, child) {
+        return Opacity(
+          opacity: value,
+          child: child,
+        );
+      },
+      child: child,
+    );
+  }
+}
+
+class SlideUpAnimation extends StatelessWidget {
+  final Widget child;
+  final Duration duration;
+
+  const SlideUpAnimation({
+    Key? key,
+    required this.child,
+    this.duration = const Duration(milliseconds: 500),
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TweenAnimationBuilder(
+      tween: Tween<Offset>(begin: const Offset(0, 0.2), end: Offset.zero),
+      duration: duration,
+      curve: Curves.easeOut,
+      builder: (context, Offset value, child) {
+        return FractionalTranslation(
+          translation: value,
+          child: child,
+        );
+      },
+      child: child,
+    );
+  }
+}
