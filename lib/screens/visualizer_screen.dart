@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VisualizerScreen extends StatelessWidget {
-  const VisualizerScreen({Key? key}) : super(key: key);
+  const VisualizerScreen({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +29,9 @@ class VisualizerScreen extends StatelessWidget {
   Widget _buildVisCard(String name, Color color) {
     return Container(
       decoration: BoxDecoration(
-        color: color.withOpacity(0.2),
+        color: color.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.5), width: 2),
+        border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
       ),
       child: Center(
         child: Text(

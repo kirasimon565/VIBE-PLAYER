@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
             subtitle: const Text('Sync with heart rate & breathing'),
             value: true,
             onChanged: (val) {},
-            activeColor: Colors.purpleAccent,
+            activeThumbColor: Colors.purpleAccent,
           ),
         ],
       ),

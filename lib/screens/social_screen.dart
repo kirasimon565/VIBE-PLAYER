@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/social/mood_share.dart';
 
 class SocialScreen extends StatelessWidget {
-  const SocialScreen({Key? key}) : super(key: key);
+  const SocialScreen({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class SocialScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: crossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text('Share your vibe', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),

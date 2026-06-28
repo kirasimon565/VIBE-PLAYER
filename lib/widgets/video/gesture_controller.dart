@@ -8,13 +8,13 @@ class VideoGestureController extends StatelessWidget {
   final Function(double) onVerticalDrag;
 
   const VideoGestureController({
-    Key? key,
+    super.key,
     required this.child,
     required this.onTap,
     required this.onDoubleTap,
     required this.onHorizontalDrag,
     required this.onVerticalDrag,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

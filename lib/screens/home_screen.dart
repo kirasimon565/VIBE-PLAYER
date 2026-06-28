@@ -7,7 +7,7 @@ import 'settings_screen.dart';
 import '../models/media_item.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-                        color: Colors.primaries[index % Colors.primaries.length].withOpacity(0.5),
+                        color: Colors.primaries[index % Colors.primaries.length].withValues(alpha: 0.5),
                       ),
                       child: const Center(child: Icon(Icons.music_note, size: 40)),
                     ),

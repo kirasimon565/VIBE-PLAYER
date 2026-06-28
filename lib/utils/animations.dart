@@ -6,11 +6,11 @@ class FadeInAnimation extends StatelessWidget {
   final Duration delay;
 
   const FadeInAnimation({
-    Key? key,
+    super.key,
     required this.child,
     this.duration = const Duration(milliseconds: 500),
     this.delay = Duration.zero,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +34,10 @@ class SlideUpAnimation extends StatelessWidget {
   final Duration duration;
 
   const SlideUpAnimation({
-    Key? key,
+    super.key,
     required this.child,
     this.duration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

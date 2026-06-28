@@ -5,9 +5,9 @@ class CollaborativePlaylistView extends StatelessWidget {
   final Playlist playlist;
 
   const CollaborativePlaylistView({
-    Key? key,
+    super.key,
     required this.playlist,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

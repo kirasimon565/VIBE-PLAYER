@@ -12,7 +12,7 @@ class PlaybackService extends ChangeNotifier {
   bool _isPlaying = false;
   Duration _currentPosition = Duration.zero;
   Duration _totalDuration = Duration.zero;
-  double _volume = 1.0;
+
 
   MediaItem? get currentItem => _currentItem;
   bool get isPlaying => _isPlaying;
@@ -110,7 +110,7 @@ class PlaybackService extends ChangeNotifier {
   }
 
   Future<void> setVolume(double volume) async {
-    _volume = volume;
+
     if (_currentItem?.isVideo == true) {
       await _videoController?.setVolume(volume);
     } else {
