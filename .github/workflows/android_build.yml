@@ -40,7 +40,7 @@ jobs:
         run: flutter test || echo "No tests to run"
 
       - name: Build APK
-        run: flutter build apk --release
+        run: ./patch_on_audio_query.sh && flutter build apk --release
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v3
