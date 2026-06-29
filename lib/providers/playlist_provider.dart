@@ -3,7 +3,7 @@ import '../models/playlist.dart';
 import '../models/media_item.dart';
 
 class PlaylistProvider extends ChangeNotifier {
-  List<Playlist> _playlists = [];
+  final List<Playlist> _playlists = [];
 
   List<Playlist> get playlists => _playlists;
 
