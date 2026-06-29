@@ -5,10 +5,10 @@ class ProjectionMapper extends StatelessWidget {
   final double distortionFactor;
 
   const ProjectionMapper({
-    Key? key,
+    super.key,
     required this.child,
     this.distortionFactor = 0.1,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

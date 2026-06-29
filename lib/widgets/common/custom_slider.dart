@@ -8,13 +8,13 @@ class CustomSlider extends StatelessWidget {
   final String rightLabel;
 
   const CustomSlider({
-    Key? key,
+    super.key,
     required this.value,
     required this.max,
     this.onChanged,
     this.leftLabel = '',
     this.rightLabel = '',
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

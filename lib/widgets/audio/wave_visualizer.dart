@@ -6,10 +6,10 @@ class WaveVisualizer extends StatefulWidget {
   final Color color;
 
   const WaveVisualizer({
-    Key? key,
+    super.key,
     required this.isPlaying,
     this.color = Colors.white,
-  }) : super(key: key);
+  }) ;
 
   @override
   State<WaveVisualizer> createState() => _WaveVisualizerState();
@@ -86,7 +86,7 @@ class _WaveVisualizerState extends State<WaveVisualizer> with SingleTickerProvid
             width: 4,
             height: _heights[index],
             decoration: BoxDecoration(
-              color: widget.color.withOpacity(0.8),
+              color: widget.color.withValues(alpha: 0.8),
               borderRadius: BorderRadius.circular(2),
             ),
           );

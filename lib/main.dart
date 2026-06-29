@@ -29,7 +29,7 @@ void main() {
 }
 
 class VibeApp extends StatelessWidget {
-  const VibeApp({Key? key}) : super(key: key);
+  const VibeApp({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class VibeApp extends StatelessWidget {
 
 // Wrapper for Main Navigation
 class MainNavigation extends StatefulWidget {
-  const MainNavigation({Key? key}) : super(key: key);
+  const MainNavigation({super.key}) ;
 
   @override
   State<MainNavigation> createState() => _MainNavigationState();
@@ -74,7 +74,7 @@ class _MainNavigationState extends State<MainNavigation> {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.black.withOpacity(0.8), Colors.black],
+            colors: [Colors.black.withValues(alpha: 0.8), Colors.black],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

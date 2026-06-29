@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
-import 'home_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/media_provider.dart';
+import '../main.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -39,18 +38,21 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
   Future<void> _loadDataAndNavigate() async {
     await Future.delayed(const Duration(milliseconds: 2500));
-    if (mounted) {
-      await Provider.of<MediaProvider>(context, listen: false).loadMedia();
-      Navigator.of(context).pushReplacement(
-        PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => const MainNavigation(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return FadeTransition(opacity: animation, child: child);
-          },
-          transitionDuration: const Duration(milliseconds: 800),
-        ),
-      );
-    }
+    if (!mounted) return;
+
+    await Provider.of<MediaProvider>(context, listen: false).loadMedia();
+
+    if (!mounted) return;
+
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => const MainNavigation(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+        transitionDuration: const Duration(milliseconds: 800),
+      ),
+    );
   }
 
   @override

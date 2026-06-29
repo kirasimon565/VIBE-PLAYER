@@ -7,10 +7,10 @@ class AlbumArt3D extends StatefulWidget {
   final bool isPlaying;
 
   const AlbumArt3D({
-    Key? key,
+    super.key,
     this.imagePath,
     required this.isPlaying,
-  }) : super(key: key);
+  }) ;
 
   @override
   State<AlbumArt3D> createState() => _AlbumArt3DState();
@@ -82,7 +82,7 @@ class _AlbumArt3DState extends State<AlbumArt3D> with SingleTickerProviderStateM
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
+                    color: Colors.black.withValues(alpha: 0.5),
                     blurRadius: 20,
                     spreadRadius: 5,
                     offset: const Offset(0, 10),

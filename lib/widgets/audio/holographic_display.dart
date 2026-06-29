@@ -4,7 +4,7 @@ import 'dart:math';
 class HolographicDisplay extends StatefulWidget {
   final Widget child;
 
-  const HolographicDisplay({Key? key, required this.child}) : super(key: key);
+  const HolographicDisplay({super.key, required this.child}) ;
 
   @override
   State<HolographicDisplay> createState() => _HolographicDisplayState();
@@ -37,9 +37,9 @@ class _HolographicDisplayState extends State<HolographicDisplay> with SingleTick
           shaderCallback: (bounds) {
             return LinearGradient(
               colors: [
-                Colors.cyanAccent.withOpacity(0.5),
-                Colors.purpleAccent.withOpacity(0.5),
-                Colors.cyanAccent.withOpacity(0.5),
+                Colors.cyanAccent.withValues(alpha: 0.5),
+                Colors.purpleAccent.withValues(alpha: 0.5),
+                Colors.cyanAccent.withValues(alpha: 0.5),
               ],
               stops: [0.0, 0.5 + sin(_controller.value * 2 * pi) * 0.5, 1.0],
               begin: Alignment.topLeft,

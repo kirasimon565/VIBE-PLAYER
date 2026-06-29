@@ -6,10 +6,10 @@ class ParticleEffects extends StatefulWidget {
   final Color color;
 
   const ParticleEffects({
-    Key? key,
+    super.key,
     required this.isPlaying,
     this.color = Colors.white,
-  }) : super(key: key);
+  }) ;
 
   @override
   State<ParticleEffects> createState() => _ParticleEffectsState();
@@ -104,7 +104,7 @@ class _ParticlePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
     for (var particle in particles) {
-      paint.color = color.withOpacity(particle.opacity);
+      paint.color = color.withValues(alpha: particle.opacity);
       canvas.drawCircle(
         Offset(particle.x * size.width, particle.y * size.height),
         particle.size,

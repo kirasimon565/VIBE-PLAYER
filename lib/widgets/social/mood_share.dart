@@ -5,10 +5,10 @@ class MoodShareWidget extends StatelessWidget {
   final VoidCallback onShare;
 
   const MoodShareWidget({
-    Key? key,
+    super.key,
     required this.mood,
     required this.onShare,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,9 @@ class MoodShareWidget extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: moodColor.withOpacity(0.2),
+          color: moodColor.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: moodColor.withOpacity(0.5)),
+          border: Border.all(color: moodColor.withValues(alpha: 0.5)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

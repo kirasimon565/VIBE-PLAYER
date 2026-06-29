@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
-import 'app_constants.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class ThemeConfig {
@@ -24,9 +24,9 @@ class ThemeConfig {
       ),
       sliderTheme: SliderThemeData(
         activeTrackColor: AppColors.primary,
-        inactiveTrackColor: AppColors.primary.withOpacity(0.3),
+        inactiveTrackColor: AppColors.primary.withValues(alpha: 0.3),
         thumbColor: AppColors.secondary,
-        overlayColor: AppColors.secondary.withOpacity(0.2),
+        overlayColor: AppColors.secondary.withValues(alpha: 0.2),
       ),
     );
   }

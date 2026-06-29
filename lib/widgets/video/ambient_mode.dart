@@ -5,7 +5,7 @@ import 'dart:ui';
 class AmbientModePlayer extends StatelessWidget {
   final VideoPlayerController controller;
 
-  const AmbientModePlayer({Key? key, required this.controller}) : super(key: key);
+  const AmbientModePlayer({super.key, required this.controller}) ;
 
   @override
   Widget build(BuildContext context) {

@@ -6,10 +6,10 @@ class MediaBrowser extends StatelessWidget {
   final Function(MediaItem) onSelect;
 
   const MediaBrowser({
-    Key? key,
+    super.key,
     required this.items,
     required this.onSelect,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

@@ -6,10 +6,10 @@ class MultiViewPlayer extends StatefulWidget {
   final String mode; // 'cine-vibe', 'reality-blend', 'dream-stream', etc.
 
   const MultiViewPlayer({
-    Key? key,
+    super.key,
     required this.controller,
     this.mode = 'cine-vibe',
-  }) : super(key: key);
+  }) ;
 
   @override
   State<MultiViewPlayer> createState() => _MultiViewPlayerState();
@@ -31,7 +31,7 @@ class _MultiViewPlayerState extends State<MultiViewPlayer> {
     if (widget.mode == 'dream-stream') {
       videoWidget = ColorFiltered(
         colorFilter: ColorFilter.mode(
-          Colors.purple.withOpacity(0.3),
+          Colors.purple.withValues(alpha: 0.3),
           BlendMode.overlay,
         ),
         child: videoWidget,
@@ -45,7 +45,7 @@ class _MultiViewPlayerState extends State<MultiViewPlayer> {
           Container(
             decoration: BoxDecoration(
               gradient: RadialGradient(
-                colors: [Colors.transparent, Colors.black.withOpacity(0.5)],
+                colors: [Colors.transparent, Colors.black.withValues(alpha: 0.5)],
                 radius: 1.5,
               ),
             ),

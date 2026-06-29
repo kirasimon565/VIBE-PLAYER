@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EqualizerControls extends StatefulWidget {
-  const EqualizerControls({Key? key}) : super(key: key);
+  const EqualizerControls({super.key}) ;
 
   @override
   State<EqualizerControls> createState() => _EqualizerControlsState();

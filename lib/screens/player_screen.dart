@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widgets/audio/3d_album_art.dart';
+import '../widgets/audio/three_d_album_art.dart';
 import '../widgets/audio/wave_visualizer.dart';
 import '../widgets/common/custom_slider.dart';
 import '../services/playback_service.dart';
 
 class PlayerScreen extends StatelessWidget {
-  const PlayerScreen({Key? key}) : super(key: key);
+  const PlayerScreen({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class PlayerScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.purple.withOpacity(0.5),
+              Colors.purple.withValues(alpha: 0.5),
               Colors.black,
             ],
           ),
