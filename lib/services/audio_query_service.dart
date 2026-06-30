@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class AudioQueryService {
@@ -9,7 +10,10 @@ class AudioQueryService {
       final List<dynamic> result = await _channel.invokeMethod('getAudioFiles');
       return result.map((item) => Map<String, dynamic>.from(item)).toList();
     } on PlatformException catch (e) {
-      print('Failed to get audio files: ${e.message}');
+      debugPrint('Failed to get audio files: ${e.message}');
+      return [];
+    } catch (e) {
+      debugPrint('Unexpected error getting audio files: $e');
       return [];
     }
   }
@@ -20,7 +24,10 @@ class AudioQueryService {
       final bool? result = await _channel.invokeMethod('checkPermissions');
       return result ?? false;
     } on PlatformException catch (e) {
-      print('Failed to check permissions: ${e.message}');
+      debugPrint('Failed to check permissions: ${e.message}');
+      return false;
+    } catch (e) {
+      debugPrint('Unexpected permission check error: $e');
       return false;
     }
   }
@@ -30,7 +37,9 @@ class AudioQueryService {
     try {
       await _channel.invokeMethod('requestPermissions');
     } on PlatformException catch (e) {
-      print('Failed to request permissions: ${e.message}');
+      debugPrint('Failed to request permissions: ${e.message}');
+    } catch (e) {
+      debugPrint('Unexpected permission request error: $e');
     }
   }
 }
